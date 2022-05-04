@@ -2,21 +2,21 @@ package app.importdata.extension.json;
 
 import app.importdata.extension.ImportLabDataExtension;
 import app.importdata.labdata.ImportData;
-import app.importdata.parser.XMLImportParserFactory;
-import app.importdata.parser.xml.ImportXMLParser;
-import app.importdata.parser.xml.XMLImportParserFactoryImpl;
+import app.importdata.parser.JSONImportParserFactory;
+import app.importdata.parser.json.ImportJSONParser;
+import app.importdata.parser.json.JSONImportParserFactoryImpl;
 
 public class ImportJSONExtension<T> implements ImportLabDataExtension {
 
-	private ImportXMLParser parser;
+	private ImportJSONParser parser;
 
 	private ImportData importData;
 
 	public ImportJSONExtension(ImportData importData) {
 		super();
 		this.importData = importData;
-		XMLImportParserFactory xmlParserFactory = new XMLImportParserFactoryImpl();
-		parser = xmlParserFactory.getXMLParser(this.importData.getSpeciality());
+		JSONImportParserFactory jsonParserFactory = new JSONImportParserFactoryImpl();
+		parser = jsonParserFactory.getJSONParser(this.importData.getSpeciality());
 		parser.setData(this.importData);
 	}
 

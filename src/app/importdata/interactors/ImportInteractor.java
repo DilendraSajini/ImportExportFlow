@@ -12,15 +12,15 @@ public class ImportInteractor<T> {
 	private ImportLabDataHandlerFactory<T> dataHandlerFactory;
 	private PersistanceAPI persistanceAPI;
 
-	public ImportInteractor(ImportLabDataHandlerFactory importLabDataHandlerFactory, PersistanceAPI persistanceAPI) {
+	public ImportInteractor(ImportLabDataHandlerFactory<T> importLabDataHandlerFactory, PersistanceAPI persistanceAPI) {
 		super();
 		this.dataHandlerFactory = importLabDataHandlerFactory;
 		this.persistanceAPI = persistanceAPI;
 	}
 
-	public void importData(ReportData<T> data) {
+	public void importData(ReportData<T> data, DocType type) {
 		ImportLabDataHandler handler = dataHandlerFactory.getHandler(data);
-		Object object = ((ImportLabDataExtension) (handler.getData().getExtensionMap().get(DocType.XML))).getObject();
+		Object object = ((ImportLabDataExtension) (handler.getData().getExtensionMap().get(type))).getObject();
 		persistanceAPI.save(object);
 		System.out.println(object);
 	}

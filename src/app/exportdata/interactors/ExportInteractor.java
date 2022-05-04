@@ -18,9 +18,9 @@ public class ExportInteractor {
 		this.persistanceAPI = persistanceAPI;
 	}
 
-	public void export(RequestData data) {
+	public void export(RequestData data, DocType type) {
 		ExportLabDataHandler handler = dataHandlerFactory.getHandler(data);
-		String xmlString = ((ExportLabDataExtension)(handler.getData().getExtensionMap().get(DocType.XML))).getString();
+		String xmlString = ((ExportLabDataExtension)(handler.getData().getExtensionMap().get(type))).getString();
 		persistanceAPI.save(xmlString);
 		System.out.println(xmlString);
 	}

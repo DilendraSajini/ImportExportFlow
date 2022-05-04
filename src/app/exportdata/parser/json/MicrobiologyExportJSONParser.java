@@ -4,7 +4,7 @@ public class MicrobiologyExportJSONParser extends ExportJSONParser {
 
 	@Override
 	public String getJSONString() {
-		return "";
+		return "Microbiology Request JSON";
 	}
 
 }

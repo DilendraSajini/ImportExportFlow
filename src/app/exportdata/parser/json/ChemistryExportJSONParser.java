@@ -4,6 +4,6 @@ public class ChemistryExportJSONParser extends ExportJSONParser{
 
 	@Override
 	public String getJSONString() {
-		return "";
+		return "Chemistry Request JSON";
 	}
 }
