@@ -4,8 +4,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import app.labdata.ExportData;
-import app.labdata.LabData;
+import app.common.labdata.LabData;
+import app.exportdata.labdata.ExportData;
 
 public class ImportTest {
 	 private LabData data;
