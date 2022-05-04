@@ -15,9 +15,9 @@ public class Main {
 		RequestData requestData = new RequestData(0);
 		PersistanceAPI persistanceAPI = new PersistanceAPIImpl();
 		new ExportInteractor(new ExportLabDataHandlerFactoryImpl(), persistanceAPI).export(requestData);
-		
+
 		String stringXML = "<xml></xml>";
-		ReportData<String> data = new  ReportData<>(0, stringXML);
+		ReportData<String> data = new ReportData<>(0, stringXML);
 		new ImportInteractor<String>(new ImportLabDataHandlerFactoryImpl(), persistanceAPI).importData(data);
 	}
 }
