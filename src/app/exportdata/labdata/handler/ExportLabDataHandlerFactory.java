@@ -1,6 +1,6 @@
 package app.exportdata.labdata.handler;
 
-import app.data.RequestData;
+import app.common.data.RequestData;
 
 public interface ExportLabDataHandlerFactory {
 	ExportLabDataHandler getHandler(RequestData data);

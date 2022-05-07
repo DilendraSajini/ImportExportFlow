@@ -1,6 +1,6 @@
 package app.exportdata.labdata;
 
-import app.data.RequestData;
+import app.common.data.RequestData;
 import app.exportdata.extension.json.ExportJSONExtension;
 import app.exportdata.extension.xml.ExportXMLExtension;
 import main.DocType;

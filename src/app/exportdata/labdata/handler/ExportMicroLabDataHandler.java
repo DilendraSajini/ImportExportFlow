@@ -1,7 +1,7 @@
 package app.exportdata.labdata.handler;
 
+import app.common.data.RequestData;
 import app.common.labdata.LabData;
-import app.data.RequestData;
 import app.exportdata.labdata.MicrobiologyExportData;
 
 public class ExportMicroLabDataHandler implements ExportLabDataHandler{

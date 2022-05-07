@@ -1,6 +1,6 @@
 package app.importdata.labdata;
 
-import app.data.ReportData;
+import app.common.data.ReportData;
 import app.importdata.extension.json.ImportJSONExtension;
 import app.importdata.extension.xml.ImportXMLExtension;
 import main.DocType;

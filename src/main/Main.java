@@ -1,8 +1,8 @@
 package main;
 
+import app.common.data.ReportData;
+import app.common.data.RequestData;
 import app.common.persistance.PersistanceAPI;
-import app.data.ReportData;
-import app.data.RequestData;
 import app.exportdata.interactors.ExportInteractor;
 import app.importdata.interactors.ImportInteractor;
 import main.exportdata.labdata.handler.ExportLabDataHandlerFactoryImpl;

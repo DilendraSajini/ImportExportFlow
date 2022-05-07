@@ -1,7 +1,7 @@
 package app.importdata.labdata.handler;
 
+import app.common.data.ReportData;
 import app.common.labdata.LabData;
-import app.data.ReportData;
 import app.importdata.labdata.ChemistryImportData;
 
 public class ImportChemistryLabDataHandler<T> implements ImportLabDataHandler{

@@ -1,7 +1,7 @@
 package app.exportdata.interactors;
 
+import app.common.data.RequestData;
 import app.common.persistance.PersistanceAPI;
-import app.data.RequestData;
 import app.exportdata.extension.ExportLabDataExtension;
 import app.exportdata.labdata.handler.ExportLabDataHandler;
 import app.exportdata.labdata.handler.ExportLabDataHandlerFactory;

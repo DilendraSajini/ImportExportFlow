@@ -1,6 +1,6 @@
 package main.importdata.labdata.handler;
 
-import app.data.ReportData;
+import app.common.data.ReportData;
 import app.importdata.labdata.handler.ImportChemistryLabDataHandler;
 import app.importdata.labdata.handler.ImportLabDataHandler;
 import app.importdata.labdata.handler.ImportLabDataHandlerFactory;

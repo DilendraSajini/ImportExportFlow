@@ -1,4 +1,4 @@
-package app.data;
+package app.common.data;
 
 
 public class ReportData<T> {

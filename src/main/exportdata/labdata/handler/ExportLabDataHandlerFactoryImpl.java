@@ -1,6 +1,6 @@
 package main.exportdata.labdata.handler;
 
-import app.data.RequestData;
+import app.common.data.RequestData;
 import app.exportdata.labdata.handler.ExportChemistryLabDataHandler;
 import app.exportdata.labdata.handler.ExportLabDataHandler;
 import app.exportdata.labdata.handler.ExportLabDataHandlerFactory;
