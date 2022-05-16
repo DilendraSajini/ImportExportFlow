@@ -3,25 +3,22 @@ package app.exportdata.interactors;
 import app.common.data.RequestData;
 import app.common.persistance.PersistanceAPI;
 import app.exportdata.extension.ExportLabDataExtension;
-import app.exportdata.labdata.handler.ExportLabDataHandler;
-import app.exportdata.labdata.handler.ExportLabDataHandlerFactory;
+import app.exportdata.labdata.handler.ExportDataHandler;
 import main.DocType;
 
 public class ExportInteractor {
 
-	private ExportLabDataHandlerFactory dataHandlerFactory;
-	private PersistanceAPI persistanceAPI;
+	private PersistanceAPI persistanceApi;
 
-	public ExportInteractor(ExportLabDataHandlerFactory dataHandlerFactory, PersistanceAPI persistanceAPI) {
+	public ExportInteractor(PersistanceAPI persistanceAPI) {
 		super();
-		this.dataHandlerFactory = dataHandlerFactory;
-		this.persistanceAPI = persistanceAPI;
+		this.persistanceApi = persistanceAPI;
 	}
 
 	public void export(RequestData data, DocType type) {
-		ExportLabDataHandler handler = dataHandlerFactory.getHandler(data);
-		String xmlString = ((ExportLabDataExtension)(handler.getData().getExtensionMap().get(type))).getString();
-		persistanceAPI.save(xmlString);
+		ExportDataHandler handler = new ExportDataHandler(data);
+		String xmlString = ((ExportLabDataExtension) (handler.getData().getExtensionMap().get(type))).getString();
+		persistanceApi.save(xmlString);
 		System.out.println(xmlString);
 	}
 

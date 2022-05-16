@@ -1,14 +1,14 @@
 package app.exportdata.parser.json;
 
-import app.exportdata.labdata.ExportData;
+import app.common.labdata.LabData;
 
 public abstract class ExportJSONParser {
 
-	ExportData exportData;
+	LabData exportData;
 
-	public void setData(ExportData exportData) {
+	public void setData(LabData exportData) {
 		this.exportData = exportData;
 	}
 
-	public abstract String getJSONString();
+	public abstract String getString();
 }

@@ -1,15 +1,17 @@
 package app.importdata.parser.xml;
 
-import app.importdata.parser.XMLImportParserFactory;
+import app.common.labdata.LabData;
+import app.importdata.parser.ImportParser;
+import app.importdata.parser.ImportParserFactory;
 
-public class XMLImportParserFactoryImpl implements XMLImportParserFactory {
+public class XMLImportParserFactoryImpl implements ImportParserFactory {
 
 	@Override
-	public ImportXMLParser getXMLParser(int speciality) {
-		if(speciality == 0) {
-			return new ChemistryImportXMLParser();	
+	public ImportParser getParser(int speciality, LabData importData) {
+		if (speciality == 1) {
+			return new ChemistryImportXMLParser(importData);
 		}
-		return new MicrobiologyImportXMLParser();
+		return new MicrobiologyImportXMLParser(importData);
 	}
 
 }

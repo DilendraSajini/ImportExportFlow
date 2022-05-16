@@ -1,28 +1,26 @@
 package app.exportdata.extension.xml;
 
+import app.common.labdata.LabData;
 import app.exportdata.extension.ExportLabDataExtension;
-import app.exportdata.labdata.ExportData;
-import app.exportdata.parser.XMLExportParserFactory;
-import app.exportdata.parser.xml.ExportXMLParser;
-import app.exportdata.parser.xml.XMLExportParserFactoryImpl;
+import app.exportdata.parser.ExportParser;
+import app.exportdata.parser.ExportTypeParserFactory;
+import app.exportdata.parser.ExportTypeParserFactoryImpl;
+import main.DocType;
 
-public class ExportXMLExtension implements ExportLabDataExtension{
+public class ExportXMLExtension extends ExportLabDataExtension{
 
-	private ExportXMLParser parser;
-	
-	private ExportData exportData;
-	
-	public ExportXMLExtension(ExportData exportData) {
-		super();
+	private ExportParser parser;
+
+	public ExportXMLExtension(LabData exportData) {
+		super(exportData);
 		this.exportData = exportData;
-		XMLExportParserFactory xmlParserFactory = new XMLExportParserFactoryImpl();
-		parser = xmlParserFactory.getXMLParser(this.exportData.getSpeciality());
-		parser.setData(this.exportData);
+		ExportTypeParserFactory exportParserFactory = new ExportTypeParserFactoryImpl();
+		parser = exportParserFactory.getTypeParserFactory(DocType.XML).getParser(this.exportData.getSpeciality(), exportData);
 	}	
 	
 	@Override
 	public String getString() {	
-		return parser.getXMLString();
+		return parser.getString();
 	}
 
 }

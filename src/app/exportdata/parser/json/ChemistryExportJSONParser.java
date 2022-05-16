@@ -1,9 +1,16 @@
 package app.exportdata.parser.json;
 
-public class ChemistryExportJSONParser extends ExportJSONParser{
+import app.common.labdata.LabData;
+import app.exportdata.parser.ExportParser;
+
+public class ChemistryExportJSONParser extends ExportParser{
+
+	public ChemistryExportJSONParser(LabData exportData) {
+		super(exportData);
+	}
 
 	@Override
-	public String getJSONString() {
+	public String getString() {
 		return "Chemistry Request JSON";
 	}
 }

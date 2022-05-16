@@ -1,9 +1,16 @@
 package app.exportdata.parser.json;
 
-public class MicrobiologyExportJSONParser extends ExportJSONParser {
+import app.common.labdata.LabData;
+import app.exportdata.parser.ExportParser;
+
+public class MicrobiologyExportJSONParser extends ExportParser {
+
+	public MicrobiologyExportJSONParser(LabData exportData) {
+		super(exportData);
+	}
 
 	@Override
-	public String getJSONString() {
+	public String getString() {
 		return "Microbiology Request JSON";
 	}
 

@@ -1,14 +1,14 @@
 package app.exportdata.parser.xml;
 
-import app.exportdata.labdata.ExportData;
+import app.common.labdata.LabData;
 
 public abstract class ExportXMLParser {
 
-	ExportData exportData;
+	LabData exportData;
 	
-	public void setData(ExportData exportData) {
+	public void setData(LabData exportData) {
 		this.exportData = exportData;
 	}
 
-	public abstract String getXMLString();
+	public abstract String getString();
 }

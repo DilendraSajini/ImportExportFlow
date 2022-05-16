@@ -1,28 +1,26 @@
 package app.exportdata.extension.json;
 
+import app.common.labdata.LabData;
 import app.exportdata.extension.ExportLabDataExtension;
-import app.exportdata.labdata.ExportData;
-import app.exportdata.parser.JSONExportParserFactory;
-import app.exportdata.parser.json.ExportJSONParser;
-import app.exportdata.parser.json.JSONExportParserFactoryImpl;
+import app.exportdata.parser.ExportParser;
+import app.exportdata.parser.ExportTypeParserFactory;
+import app.exportdata.parser.ExportTypeParserFactoryImpl;
+import main.DocType;
 
-public class ExportJSONExtension implements ExportLabDataExtension {
+public class ExportJSONExtension extends ExportLabDataExtension {
 
-	private ExportJSONParser parser;
-	
-	private ExportData exportData;
+	private ExportParser parser;
 
-	public ExportJSONExtension(ExportData exportData) {
-		super();
+	public ExportJSONExtension(LabData exportData) {
+		super(exportData);
 		this.exportData = exportData;
-		JSONExportParserFactory parserFactory = new JSONExportParserFactoryImpl();
-		parser = parserFactory.getJSONParser(this.exportData.getSpeciality());
-		parser.setData(this.exportData);
+		ExportTypeParserFactory exportParserFactory = new ExportTypeParserFactoryImpl();
+		parser = exportParserFactory.getTypeParserFactory(DocType.JSON).getParser(this.exportData.getSpeciality(), exportData);
 	}
 
 	@Override
 	public String getString() {
-		return parser.getJSONString();
+		return parser.getString();
 	}
 
 }

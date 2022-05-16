@@ -5,14 +5,12 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import app.common.labdata.LabData;
-import app.exportdata.labdata.ExportData;
 
 public class ImportTest {
 	 private LabData data;
 
   @Test
   public void start() {
-	  data = new ExportData(1);
   }
   
   @Test

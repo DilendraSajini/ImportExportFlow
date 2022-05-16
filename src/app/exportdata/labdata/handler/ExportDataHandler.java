@@ -2,19 +2,18 @@ package app.exportdata.labdata.handler;
 
 import app.common.data.RequestData;
 import app.common.labdata.LabData;
-import app.exportdata.labdata.ChemistryExportData;
+import app.exportdata.labdata.ExportData;
 
-public class ExportChemistryLabDataHandler implements ExportLabDataHandler {
+public class ExportDataHandler implements DataHandler{
 
 	private RequestData requestData;
 	
-	public ExportChemistryLabDataHandler(RequestData requestData) {
+	public ExportDataHandler(RequestData requestData) {
 		this.requestData = requestData;
 	}
 
 	@Override
 	public LabData getData() {
-		return new ChemistryExportData(requestData);
+		return new ExportData(requestData);
 	}
-
 }

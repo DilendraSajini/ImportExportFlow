@@ -1,8 +1,15 @@
 package app.exportdata.extension;
 
 import app.common.extension.LabDataExtension;
+import app.common.labdata.LabData;
 
-public interface ExportLabDataExtension extends LabDataExtension{
+public abstract class ExportLabDataExtension implements LabDataExtension{
 
-	String getString();
+	protected LabData exportData;
+	
+	public abstract String getString();
+
+	public ExportLabDataExtension(LabData exportData) {
+		this.exportData = exportData;
+	}
 }

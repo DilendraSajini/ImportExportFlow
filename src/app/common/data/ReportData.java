@@ -7,6 +7,10 @@ public class ReportData<T> {
 	
 	private T importData;
 	
+	public T getImportData() {
+		return importData;
+	}
+
 	public int getSpeciality() {
 		return speciality;
 	}

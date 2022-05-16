@@ -1,15 +1,17 @@
 package app.exportdata.parser.json;
 
-import app.exportdata.parser.JSONExportParserFactory;
+import app.common.labdata.LabData;
+import app.exportdata.parser.ExportParser;
+import app.exportdata.parser.ExportParserFactory;
 
-public class JSONExportParserFactoryImpl implements JSONExportParserFactory {
+public class JSONExportParserFactoryImpl implements ExportParserFactory {
 
 	@Override
-	public ExportJSONParser getJSONParser(int speciality) {
-		if (speciality == 0) {
-			return new ChemistryExportJSONParser();
+	public ExportParser getParser(int speciality, LabData exportData) {
+		if (speciality == 1) {
+			return new ChemistryExportJSONParser(exportData);
 		}
-		return new MicrobiologyExportJSONParser();
+		return new MicrobiologyExportJSONParser(exportData);
 	}
 
 }

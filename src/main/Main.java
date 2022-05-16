@@ -5,19 +5,17 @@ import app.common.data.RequestData;
 import app.common.persistance.PersistanceAPI;
 import app.exportdata.interactors.ExportInteractor;
 import app.importdata.interactors.ImportInteractor;
-import main.exportdata.labdata.handler.ExportLabDataHandlerFactoryImpl;
-import main.importdata.labdata.handler.ImportLabDataHandlerFactoryImpl;
 import main.persistance.PersistanceAPIImpl;
 
 public class Main {
 
 	public static void main(String[] args) {
-		RequestData requestData = new RequestData(9);
+		RequestData requestData = new RequestData(1);
 		PersistanceAPI persistanceAPI = new PersistanceAPIImpl();
-		new ExportInteractor(new ExportLabDataHandlerFactoryImpl(), persistanceAPI).export(requestData, DocType.JSON);
+		new ExportInteractor(persistanceAPI).export(requestData, DocType.JSON);
 
 		String stringXML = "<xml></xml>";
-		ReportData<String> data = new ReportData<>(9, stringXML);
-		new ImportInteractor<String>(new ImportLabDataHandlerFactoryImpl(), persistanceAPI).importData(data, DocType.JSON);
+		ReportData<String> data = new ReportData<>(1, stringXML);
+		new ImportInteractor<String>(persistanceAPI).importData(data, DocType.JSON);
 	}
 }

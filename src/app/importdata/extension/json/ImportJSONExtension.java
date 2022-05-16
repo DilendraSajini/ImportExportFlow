@@ -1,23 +1,23 @@
 package app.importdata.extension.json;
 
+import app.common.labdata.LabData;
 import app.importdata.extension.ImportLabDataExtension;
-import app.importdata.labdata.ImportData;
-import app.importdata.parser.JSONImportParserFactory;
-import app.importdata.parser.json.ImportJSONParser;
-import app.importdata.parser.json.JSONImportParserFactoryImpl;
+import app.importdata.parser.ImportParser;
+import app.importdata.parser.ImportTypeParserFactory;
+import app.importdata.parser.ImportTypeParserFactoryImpl;
+import main.DocType;
 
-public class ImportJSONExtension<T> implements ImportLabDataExtension {
+public class ImportJSONExtension implements ImportLabDataExtension {
 
-	private ImportJSONParser parser;
+	private ImportParser parser;
 
-	private ImportData importData;
+	private LabData importData;
 
-	public ImportJSONExtension(ImportData importData) {
+	public ImportJSONExtension(LabData importData) {
 		super();
 		this.importData = importData;
-		JSONImportParserFactory jsonParserFactory = new JSONImportParserFactoryImpl();
-		parser = jsonParserFactory.getJSONParser(this.importData.getSpeciality());
-		parser.setData(this.importData);
+		ImportTypeParserFactory importParserFactory = new ImportTypeParserFactoryImpl();
+		parser = importParserFactory.getTypeParserFactory(DocType.JSON).getParser(this.importData.getSpeciality(), importData);
 	}
 
 	public Object getObject() {

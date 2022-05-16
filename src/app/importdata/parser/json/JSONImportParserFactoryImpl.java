@@ -1,15 +1,17 @@
 package app.importdata.parser.json;
 
-import app.importdata.parser.JSONImportParserFactory;
+import app.common.labdata.LabData;
+import app.importdata.parser.ImportParser;
+import app.importdata.parser.ImportParserFactory;
 
-public class JSONImportParserFactoryImpl implements JSONImportParserFactory {
+public class JSONImportParserFactoryImpl implements ImportParserFactory {
 
 	@Override
-	public ImportJSONParser getJSONParser(int speciality) {
-		if (speciality == 0) {
-			return new ChemistryImportJSONParser();
+	public ImportParser getParser(int speciality, LabData importData) {
+		if (speciality == 1) {
+			return new ChemistryImportJSONParser(importData);
 		}
-		return new MicrobiologyImportJSONParser();
+		return new MicrobiologyImportJSONParser(importData);
 	}
 
 }
