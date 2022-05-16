@@ -1,20 +1,19 @@
 package app.importdata.parser.xml;
 
 import app.common.data.ReportData;
-import app.common.labdata.LabData;
 import app.importdata.labdata.ImportData;
 import app.importdata.parser.ImportParser;
 
-public class ChemistryImportXMLParser extends ImportParser{
+public class ChemistryImportXMLParser<T> extends ImportParser<T>{
 
-	public ChemistryImportXMLParser(LabData importData) {
+	public ChemistryImportXMLParser(ImportData<T> importData) {
 		super(importData);
 	}
 
 	@Override
 	public Object getObject() {
-		ReportData<String> reportData = ((ImportData<String>)importData).getReportData();
-		return "Chemistry XML Report Object"+ reportData;
+		ReportData<T> reportData = importData.getReportData();
+		return "Chemistry XML Report Object"+ reportData.getImportData();
 	}
 
 }

@@ -1,19 +1,19 @@
 package app.importdata.extension.xml;
 
-import app.common.labdata.LabData;
 import app.importdata.extension.ImportLabDataExtension;
+import app.importdata.labdata.ImportData;
 import app.importdata.parser.ImportParser;
 import app.importdata.parser.ImportTypeParserFactory;
 import app.importdata.parser.ImportTypeParserFactoryImpl;
 import main.DocType;
 
-public class ImportXMLExtension implements ImportLabDataExtension {
+public class ImportXMLExtension<T> implements ImportLabDataExtension {
 
 	private ImportParser parser;
 	
-	private LabData importData;
+	private ImportData<T> importData;
 	
-	public ImportXMLExtension(LabData importData) {
+	public ImportXMLExtension(ImportData<T> importData) {
 		super();
 		this.importData = importData;
 		ImportTypeParserFactory importParserFactory = new ImportTypeParserFactoryImpl();

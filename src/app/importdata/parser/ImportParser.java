@@ -1,14 +1,14 @@
 package app.importdata.parser;
 
-import app.common.labdata.LabData;
+import app.importdata.labdata.ImportData;
 
-public abstract class ImportParser {
+public abstract class ImportParser<T> {
 	
-	protected LabData importData;
+	protected ImportData<T> importData;
 
 	public abstract Object getObject();
 
-	public ImportParser(LabData importData) {
+	public ImportParser(ImportData<T> importData) {
 		super();
 		this.importData = importData;
 	}

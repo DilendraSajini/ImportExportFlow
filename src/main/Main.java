@@ -10,12 +10,12 @@ import main.persistance.PersistanceAPIImpl;
 public class Main {
 
 	public static void main(String[] args) {
-		RequestData requestData = new RequestData(1);
+		RequestData requestData = new RequestData(2);
 		PersistanceAPI persistanceAPI = new PersistanceAPIImpl();
-		new ExportInteractor(persistanceAPI).export(requestData, DocType.JSON);
+		new ExportInteractor(persistanceAPI).export(requestData, DocType.XML);
 
 		String stringXML = "<xml></xml>";
-		ReportData<String> data = new ReportData<>(1, stringXML);
-		new ImportInteractor<String>(persistanceAPI).importData(data, DocType.JSON);
+		ReportData<String> data = new ReportData<>(2, stringXML);
+		new ImportInteractor<String>(persistanceAPI).importData(data, DocType.XML);
 	}
 }

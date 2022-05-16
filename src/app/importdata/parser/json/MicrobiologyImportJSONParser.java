@@ -1,11 +1,11 @@
 package app.importdata.parser.json;
 
-import app.common.labdata.LabData;
+import app.importdata.labdata.ImportData;
 import app.importdata.parser.ImportParser;
 
-public class MicrobiologyImportJSONParser extends ImportParser {
+public class MicrobiologyImportJSONParser<T> extends ImportParser<T> {
 
-	public MicrobiologyImportJSONParser(LabData importData) {
+	public MicrobiologyImportJSONParser(ImportData<T> importData) {
 		super(importData);
 	}
 

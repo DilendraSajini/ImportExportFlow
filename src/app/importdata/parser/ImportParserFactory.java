@@ -1,7 +1,7 @@
 package app.importdata.parser;
 
-import app.common.labdata.LabData;
+import app.importdata.labdata.ImportData;
 
-public interface ImportParserFactory {
-	ImportParser getParser(int speciality, LabData importData);
+public interface ImportParserFactory<T> {
+	ImportParser getParser(int speciality, ImportData<T> importData);
 }

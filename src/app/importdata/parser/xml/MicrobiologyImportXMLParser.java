@@ -1,11 +1,11 @@
 package app.importdata.parser.xml;
 
-import app.common.labdata.LabData;
+import app.importdata.labdata.ImportData;
 import app.importdata.parser.ImportParser;
 
-public class MicrobiologyImportXMLParser extends ImportParser {
+public class MicrobiologyImportXMLParser<T> extends ImportParser<T> {
 
-	public MicrobiologyImportXMLParser(LabData importData) {
+	public MicrobiologyImportXMLParser(ImportData<T> importData) {
 		super(importData);
 	}
 
