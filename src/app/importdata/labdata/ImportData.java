@@ -16,7 +16,7 @@ public class ImportData<T> extends LabData {
 	public ImportData(ReportData<T> reportData) {
 		super(reportData.getSpeciality());
 		this.reportData = reportData;
-		addExtension(DocType.JSON, new ImportJSONExtension(this));
-		addExtension(DocType.XML, new ImportXMLExtension(this));
+		addExtension(DocType.JSON, new ImportJSONExtension<>(this));
+		addExtension(DocType.XML, new ImportXMLExtension<>(this));
 	}
 }

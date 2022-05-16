@@ -2,9 +2,9 @@ package app.importdata.interactors;
 
 import app.common.data.ReportData;
 import app.common.persistance.PersistanceAPI;
+import app.exportdata.labdata.handler.DataHandler;
 import app.exportdata.labdata.handler.HandlerManager;
 import app.importdata.extension.ImportLabDataExtension;
-import app.importdata.labdata.handler.ImportDataHandler;
 import main.DocType;
 
 public class ImportInteractor<T> {
@@ -19,7 +19,7 @@ public class ImportInteractor<T> {
 	}
 
 	public void importData(ReportData<T> data, DocType type) {
-		ImportDataHandler<T> handler = (ImportDataHandler<T>) handlerManager.getImportHandler(data);
+		DataHandler handler = handlerManager.getImportHandler(data);
 		Object object = ((ImportLabDataExtension) (handler.getData().getExtensionMap().get(type))).getObject();
 		persistanceAPI.save(object);
 		System.out.println(object);

@@ -1,7 +1,7 @@
 package app.exportdata.extension.xml;
 
-import app.common.labdata.LabData;
 import app.exportdata.extension.ExportLabDataExtension;
+import app.exportdata.labdata.ExportData;
 import app.exportdata.parser.ExportParser;
 import app.exportdata.parser.ExportTypeParserFactory;
 import app.exportdata.parser.ExportTypeParserFactoryImpl;
@@ -11,7 +11,7 @@ public class ExportXMLExtension extends ExportLabDataExtension{
 
 	private ExportParser parser;
 
-	public ExportXMLExtension(LabData exportData) {
+	public ExportXMLExtension(ExportData exportData) {
 		super(exportData);
 		this.exportData = exportData;
 		ExportTypeParserFactory exportParserFactory = new ExportTypeParserFactoryImpl();

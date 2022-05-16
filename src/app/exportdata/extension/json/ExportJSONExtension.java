@@ -1,7 +1,7 @@
 package app.exportdata.extension.json;
 
-import app.common.labdata.LabData;
 import app.exportdata.extension.ExportLabDataExtension;
+import app.exportdata.labdata.ExportData;
 import app.exportdata.parser.ExportParser;
 import app.exportdata.parser.ExportTypeParserFactory;
 import app.exportdata.parser.ExportTypeParserFactoryImpl;
@@ -11,7 +11,7 @@ public class ExportJSONExtension extends ExportLabDataExtension {
 
 	private ExportParser parser;
 
-	public ExportJSONExtension(LabData exportData) {
+	public ExportJSONExtension(ExportData exportData) {
 		super(exportData);
 		this.exportData = exportData;
 		ExportTypeParserFactory exportParserFactory = new ExportTypeParserFactoryImpl();

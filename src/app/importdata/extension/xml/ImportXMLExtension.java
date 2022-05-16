@@ -7,16 +7,13 @@ import app.importdata.parser.ImportTypeParserFactory;
 import app.importdata.parser.ImportTypeParserFactoryImpl;
 import main.DocType;
 
-public class ImportXMLExtension<T> implements ImportLabDataExtension {
+public class ImportXMLExtension<T> extends ImportLabDataExtension<T> {
 
-	private ImportParser parser;
-	
-	private ImportData<T> importData;
+	private ImportParser<T> parser;
 	
 	public ImportXMLExtension(ImportData<T> importData) {
-		super();
-		this.importData = importData;
-		ImportTypeParserFactory importParserFactory = new ImportTypeParserFactoryImpl();
+		super(importData);
+		ImportTypeParserFactory<T> importParserFactory = new ImportTypeParserFactoryImpl<>();
 		parser = importParserFactory.getTypeParserFactory(DocType.XML).getParser(this.importData.getSpeciality(), importData);
 	}
 	

@@ -1,8 +1,8 @@
-package app.exportdata.labdata.handler;
+package main.exportdata.labdata.handler;
 
 import app.common.data.RequestData;
-import app.common.labdata.LabData;
 import app.exportdata.labdata.ExportData;
+import app.exportdata.labdata.handler.DataHandler;
 
 public class ExportDataHandler implements DataHandler{
 
@@ -13,7 +13,7 @@ public class ExportDataHandler implements DataHandler{
 	}
 
 	@Override
-	public LabData getData() {
+	public ExportData getData() {
 		return new ExportData(requestData);
 	}
 }
