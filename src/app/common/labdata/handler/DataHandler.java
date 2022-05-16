@@ -1,4 +1,4 @@
-package app.exportdata.labdata.handler;
+package app.common.labdata.handler;
 
 import app.common.labdata.LabData;
 

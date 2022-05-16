@@ -1,9 +1,9 @@
 package app.importdata.interactors;
 
 import app.common.data.ReportData;
+import app.common.labdata.HandlerManager;
+import app.common.labdata.handler.DataHandler;
 import app.common.persistance.PersistanceAPI;
-import app.exportdata.labdata.handler.DataHandler;
-import app.exportdata.labdata.handler.HandlerManager;
 import app.importdata.extension.ImportLabDataExtension;
 import main.DocType;
 

@@ -14,7 +14,7 @@ public class ExportJSONExtension extends ExportLabDataExtension {
 	public ExportJSONExtension(ExportData exportData) {
 		super(exportData);
 		this.exportData = exportData;
-		ExportTypeParserFactory exportParserFactory = new ExportTypeParserFactoryImpl();
+		ExportTypeParserFactory exportParserFactory = ExportTypeParserFactoryImpl.getInstance();
 		parser = exportParserFactory.getTypeParserFactory(DocType.JSON).getParser(this.exportData.getSpeciality(), exportData);
 	}
 

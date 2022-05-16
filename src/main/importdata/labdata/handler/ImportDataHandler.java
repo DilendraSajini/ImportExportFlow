@@ -1,7 +1,7 @@
 package main.importdata.labdata.handler;
 
 import app.common.data.ReportData;
-import app.exportdata.labdata.handler.DataHandler;
+import app.common.labdata.handler.DataHandler;
 import app.importdata.labdata.ImportData;
 
 public class ImportDataHandler<T> implements DataHandler{

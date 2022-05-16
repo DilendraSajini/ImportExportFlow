@@ -1,8 +1,8 @@
-package main;
+package main.common.labdata;
 
 import app.common.data.ReportData;
 import app.common.data.RequestData;
-import app.exportdata.labdata.handler.HandlerManager;
+import app.common.labdata.HandlerManager;
 import main.exportdata.labdata.handler.ExportDataHandler;
 import main.importdata.labdata.handler.ImportDataHandler;
 

@@ -1,6 +1,4 @@
-package app.importdata.parser;
-
-import app.importdata.parser.xml.ImportXMLParser;
+package app.importdata.parser.xml;
 
 public interface XMLImportParserFactory {
 

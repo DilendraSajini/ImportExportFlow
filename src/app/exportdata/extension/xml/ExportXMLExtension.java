@@ -14,7 +14,7 @@ public class ExportXMLExtension extends ExportLabDataExtension{
 	public ExportXMLExtension(ExportData exportData) {
 		super(exportData);
 		this.exportData = exportData;
-		ExportTypeParserFactory exportParserFactory = new ExportTypeParserFactoryImpl();
+		ExportTypeParserFactory exportParserFactory = ExportTypeParserFactoryImpl.getInstance();
 		parser = exportParserFactory.getTypeParserFactory(DocType.XML).getParser(this.exportData.getSpeciality(), exportData);
 	}	
 	

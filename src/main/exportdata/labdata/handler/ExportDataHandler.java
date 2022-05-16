@@ -1,8 +1,8 @@
 package main.exportdata.labdata.handler;
 
 import app.common.data.RequestData;
+import app.common.labdata.handler.DataHandler;
 import app.exportdata.labdata.ExportData;
-import app.exportdata.labdata.handler.DataHandler;
 
 public class ExportDataHandler implements DataHandler{
 

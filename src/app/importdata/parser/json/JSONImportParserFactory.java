@@ -1,6 +1,4 @@
-package app.importdata.parser;
-
-import app.importdata.parser.json.ImportJSONParser;
+package app.importdata.parser.json;
 
 public interface JSONImportParserFactory {
 
