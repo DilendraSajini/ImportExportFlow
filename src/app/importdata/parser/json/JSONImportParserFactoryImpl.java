@@ -7,11 +7,11 @@ import app.importdata.parser.ImportParserFactory;
 public class JSONImportParserFactoryImpl<T> implements ImportParserFactory<T> {
 
 	@Override
-	public ImportParser getParser(int speciality, ImportData<T> importData) {
+	public ImportParser<T> getParser(int speciality, ImportData<T> importData) {
 		if (speciality == 1) {
-			return new ChemistryImportJSONParser(importData);
+			return new ChemistryImportJSONParser<>(importData);
 		}
-		return new MicrobiologyImportJSONParser(importData);
+		return new MicrobiologyImportJSONParser<>(importData);
 	}
 
 }

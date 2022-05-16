@@ -12,10 +12,10 @@ public class Main {
 	public static void main(String[] args) {
 		RequestData requestData = new RequestData(2);
 		PersistanceAPI persistanceAPI = new PersistanceAPIImpl();
-		new ExportInteractor(persistanceAPI).export(requestData, DocType.XML);
+		new ExportInteractor(persistanceAPI, HandlerManagerImpl.getInstance()).export(requestData, DocType.XML);
 
 		String stringXML = "<xml></xml>";
 		ReportData<String> data = new ReportData<>(2, stringXML);
-		new ImportInteractor<String>(persistanceAPI).importData(data, DocType.XML);
+		new ImportInteractor<String>(persistanceAPI, HandlerManagerImpl.getInstance()).importData(data, DocType.XML);
 	}
 }

@@ -7,11 +7,11 @@ import app.importdata.parser.ImportParserFactory;
 public class XMLImportParserFactoryImpl<T> implements ImportParserFactory<T> {
 
 	@Override
-	public ImportParser getParser(int speciality, ImportData<T> importData) {
+	public ImportParser<T> getParser(int speciality, ImportData<T> importData) {
 		if (speciality == 1) {
-			return new ChemistryImportXMLParser(importData);
+			return new ChemistryImportXMLParser<>(importData);
 		}
-		return new MicrobiologyImportXMLParser(importData);
+		return new MicrobiologyImportXMLParser<>(importData);
 	}
 
 }

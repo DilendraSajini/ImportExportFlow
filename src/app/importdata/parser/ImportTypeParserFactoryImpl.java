@@ -9,9 +9,9 @@ public class ImportTypeParserFactoryImpl<T> implements ImportTypeParserFactory<T
 	@Override
 	public ImportParserFactory<T> getTypeParserFactory(DocType type) {
 		if(type == DocType.XML) {
-			return new XMLImportParserFactoryImpl();	
+			return new XMLImportParserFactoryImpl<T>();	
 		}
-		return new JSONImportParserFactoryImpl();
+		return new JSONImportParserFactoryImpl<T>();
 	}
 }
 
