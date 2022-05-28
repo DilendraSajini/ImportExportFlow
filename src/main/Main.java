@@ -11,6 +11,7 @@ import main.persistance.PersistanceAPIImpl;
 public class Main {
 
 	public static void main(String[] args) {
+		// To Do: handle batch data
 		RequestData requestData = new RequestData(2);
 		PersistanceAPI persistanceAPI = new PersistanceAPIImpl();
 		new ExportInteractor(persistanceAPI, HandlerManagerImpl.getInstance()).export(requestData, DocType.XML);
