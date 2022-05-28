@@ -12,12 +12,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		// To Do: handle batch data
-		RequestData requestData = new RequestData(2);
+		RequestData requestData = new RequestData(1);
 		PersistanceAPI persistanceAPI = new PersistanceAPIImpl();
-		new ExportInteractor(persistanceAPI, HandlerManagerImpl.getInstance()).export(requestData, DocType.XML);
+		new ExportInteractor(persistanceAPI, HandlerManagerImpl.getInstance()).export(requestData, DocType.JSON);
 
 		String stringXML = "<xml></xml>";
-		ReportData<String> data = new ReportData<>(2, stringXML);
-		new ImportInteractor<String>(persistanceAPI, HandlerManagerImpl.getInstance()).importData(data, DocType.XML);
+		ReportData<String> data = new ReportData<>(1, stringXML);
+		new ImportInteractor<String>(persistanceAPI, HandlerManagerImpl.getInstance()).importData(data, DocType.JSON);
 	}
 }

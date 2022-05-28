@@ -1,10 +1,8 @@
 package app.importdata.labdata;
 
 import app.common.data.ReportData;
+import app.common.extension.ImportExtensionProvider;
 import app.common.labdata.LabData;
-import app.extension.importdata.json.ImportJSONExtension;
-import app.extension.importdata.xml.ImportXMLExtension;
-import main.DocType;
 
 public class ImportData<T> extends LabData {
 	private ReportData<T> reportData;
@@ -13,11 +11,10 @@ public class ImportData<T> extends LabData {
 		return reportData;
 	}
 
-	public ImportData(ReportData<T> reportData) {
+	public ImportData(ReportData<T> reportData, ImportExtensionProvider extensionProvider) {
 		super(reportData.getSpeciality());
 		this.reportData = reportData;
 		// Register required extensions
-		addExtension(DocType.JSON, new ImportJSONExtension<>(this));
-		addExtension(DocType.XML, new ImportXMLExtension<>(this));
+		setExtensionMap(extensionProvider.getImportExtensionMap(this));
 	}
 }

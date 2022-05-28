@@ -7,9 +7,13 @@ import app.common.extension.LabDataExtension;
 import main.DocType;
 
 public abstract class LabData {
-	private EnumMap<DocType, LabDataExtension> extensionMap = new EnumMap<>(DocType.class);
-	
+	private EnumMap<DocType, LabDataExtension> extensionMap;
+
 	private int speciality;
+	
+	public void setExtensionMap(EnumMap<DocType, LabDataExtension> extensionMap) {
+		this.extensionMap = extensionMap;
+	}
 	
 	public Map<DocType, LabDataExtension> getExtensionMap() {
 		return extensionMap;
@@ -18,11 +22,6 @@ public abstract class LabData {
 	public int getSpeciality() {
 		return speciality;
 	}
-
-	public void addExtension(DocType extensionType, LabDataExtension extension)
-	 {
-		extensionMap.put(extensionType, extension);
-	 }
 
 	public LabData(int speciality) {
 		this.speciality = speciality;
