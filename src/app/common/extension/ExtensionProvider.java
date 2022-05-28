@@ -5,8 +5,7 @@ import java.util.EnumMap;
 import app.common.labdata.LabData;
 import main.DocType;
 
-public interface ImportExtensionProvider {
+public interface ExtensionProvider {
 
-	EnumMap<DocType, LabDataExtension> getImportExtensionMap(LabData data);
-
+	EnumMap<DocType, LabDataExtension> getExtensionMap(LabData data);
 }
