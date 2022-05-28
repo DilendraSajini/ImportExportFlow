@@ -4,7 +4,7 @@ import app.common.data.ReportData;
 import app.common.labdata.HandlerManager;
 import app.common.labdata.handler.DataHandler;
 import app.common.persistance.PersistanceAPI;
-import app.importdata.extension.ImportLabDataExtension;
+import app.extension.importdata.ImportLabDataExtension;
 import main.DocType;
 
 public class ImportInteractor<T> {

@@ -2,8 +2,8 @@ package app.exportdata.labdata;
 
 import app.common.data.RequestData;
 import app.common.labdata.LabData;
-import app.exportdata.extension.json.ExportJSONExtension;
-import app.exportdata.extension.xml.ExportXMLExtension;
+import app.extension.exportdata.json.ExportJSONExtension;
+import app.extension.exportdata.xml.ExportXMLExtension;
 import main.DocType;
 
 public class ExportData extends LabData{
@@ -17,6 +17,7 @@ public class ExportData extends LabData{
 	public ExportData(RequestData requestData) {
 		super(requestData.getSpeciality());
 		this.requestData = requestData;
+		// Register required extensions
 		addExtension(DocType.JSON, new ExportJSONExtension(this));
 		addExtension(DocType.XML, new ExportXMLExtension(this));
 	}

@@ -4,7 +4,7 @@ import app.common.data.RequestData;
 import app.common.labdata.HandlerManager;
 import app.common.labdata.handler.DataHandler;
 import app.common.persistance.PersistanceAPI;
-import app.exportdata.extension.ExportLabDataExtension;
+import app.extension.exportdata.ExportLabDataExtension;
 import main.DocType;
 
 public class ExportInteractor {
