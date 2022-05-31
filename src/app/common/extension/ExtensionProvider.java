@@ -1,11 +1,18 @@
 package app.common.extension;
 
 import java.util.EnumMap;
+import java.util.Map;
 
 import app.common.labdata.LabData;
 import main.DocType;
 
-public interface ExtensionProvider {
+public abstract class ExtensionProvider {
 
-	EnumMap<DocType, LabDataExtension> getExtensionMap(LabData data);
+	protected EnumMap<DocType, LabDataExtension> extensionMap;
+
+	public abstract Map<DocType, LabDataExtension> getExtensionMap(LabData data);
+
+	public ExtensionProvider() {
+		this.extensionMap = new EnumMap<>(DocType.class);
+	}
 }

@@ -7,18 +7,18 @@ import app.common.extension.LabDataExtension;
 import main.DocType;
 
 public abstract class LabData {
-	private EnumMap<DocType, LabDataExtension> extensionMap;
+	protected Map<DocType, LabDataExtension> extensionMap;
 
 	private int speciality;
-	
-	public void setExtensionMap(EnumMap<DocType, LabDataExtension> extensionMap) {
+
+	public void setExtensionMap(Map<DocType, LabDataExtension> extensionMap) {
 		this.extensionMap = extensionMap;
 	}
-	
+
 	public Map<DocType, LabDataExtension> getExtensionMap() {
 		return extensionMap;
 	}
-	
+
 	public int getSpeciality() {
 		return speciality;
 	}

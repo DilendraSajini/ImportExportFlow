@@ -2,7 +2,7 @@ package app.exportdata.labdata;
 
 import app.common.data.RequestData;
 import app.common.labdata.LabData;
-import app.extension.exportdata.ExportExtensionProviderImpl;
+import app.extension.exportdata.ExportExtensionProvider;
 
 public class ExportData extends LabData {
 
@@ -12,10 +12,10 @@ public class ExportData extends LabData {
 		return requestData;
 	}
 
-	public ExportData(RequestData requestData, ExportExtensionProviderImpl extensionProvider) {
+	public ExportData(RequestData requestData, ExportExtensionProvider extensionProvider) {
 		super(requestData.getSpeciality());
 		this.requestData = requestData;
-		setExtensionMap(extensionProvider.getExtensionMap(this));
+		extensionMap = extensionProvider.getExtensionMap(this);
 	}
 
 }

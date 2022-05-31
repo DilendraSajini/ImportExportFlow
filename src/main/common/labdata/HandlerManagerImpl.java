@@ -3,8 +3,6 @@ package main.common.labdata;
 import app.common.data.ReportData;
 import app.common.data.RequestData;
 import app.common.labdata.HandlerManager;
-import app.extension.exportdata.ExportExtensionProviderImpl;
-import app.extension.importdata.ImportExtensionProviderImpl;
 import main.exportdata.labdata.handler.ExportDataHandler;
 import main.importdata.labdata.handler.ImportDataHandler;
 
@@ -23,11 +21,11 @@ public class HandlerManagerImpl implements HandlerManager {
 	}
 
 	public ExportDataHandler getExportHandler(RequestData data) {
-		return new ExportDataHandler(data, new ExportExtensionProviderImpl());
+		return new ExportDataHandler(data);
 	}
 
 	@Override
 	public <T> ImportDataHandler<T> getImportHandler(ReportData<T> data) {
-		return new ImportDataHandler<>(data, new ImportExtensionProviderImpl<T>());
+		return new ImportDataHandler<>(data);
 	}
 }

@@ -1,6 +1,6 @@
 package app.extension.exportdata;
 
-import java.util.EnumMap;
+import java.util.Map;
 
 import app.common.extension.ExtensionProvider;
 import app.common.extension.LabDataExtension;
@@ -10,14 +10,16 @@ import app.extension.exportdata.json.ExportJSONExtension;
 import app.extension.exportdata.xml.ExportXMLExtension;
 import main.DocType;
 
-public class ExportExtensionProviderImpl implements ExtensionProvider {
+public class ExportExtensionProvider extends ExtensionProvider {
+
+	public ExportExtensionProvider() {
+		super();
+	}
 
 	@Override
-	public EnumMap<DocType, LabDataExtension> getExtensionMap(LabData data) {
-		EnumMap<DocType, LabDataExtension> extensionMap = new EnumMap<>(DocType.class);
+	public Map<DocType, LabDataExtension> getExtensionMap(LabData data) {
 		extensionMap.put(DocType.JSON, new ExportJSONExtension((ExportData) data));
 		extensionMap.put(DocType.XML, new ExportXMLExtension((ExportData) data));
 		return extensionMap;
 	}
-
 }

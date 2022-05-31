@@ -1,24 +1,20 @@
 package main.exportdata.labdata.handler;
 
 import app.common.data.RequestData;
-import app.common.extension.ExtensionProvider;
 import app.common.labdata.handler.DataHandler;
 import app.exportdata.labdata.ExportData;
-import app.extension.exportdata.ExportExtensionProviderImpl;
+import app.extension.exportdata.ExportExtensionProvider;
 
 public class ExportDataHandler implements DataHandler {
 
 	private RequestData requestData;
 
-	private ExportExtensionProviderImpl extensionProvider;
-
-	public ExportDataHandler(RequestData requestData, ExtensionProvider extensionProvider) {
+	public ExportDataHandler(RequestData requestData) {
 		this.requestData = requestData;
-		this.extensionProvider = (ExportExtensionProviderImpl)extensionProvider;
 	}
 
 	@Override
 	public ExportData getData() {
-		return new ExportData(requestData, extensionProvider);
+		return new ExportData(requestData, new ExportExtensionProvider());
 	}
 }

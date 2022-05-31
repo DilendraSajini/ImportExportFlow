@@ -10,7 +10,11 @@ import app.extension.importdata.xml.ImportXMLExtension;
 import app.importdata.labdata.ImportData;
 import main.DocType;
 
-public class ImportExtensionProviderImpl<T> implements ExtensionProvider {
+public class ImportExtensionProvider<T> extends ExtensionProvider {
+
+	public ImportExtensionProvider() {
+		super();
+	}
 
 	@Override
 	public EnumMap<DocType, LabDataExtension> getExtensionMap(LabData data) {
