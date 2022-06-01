@@ -13,5 +13,4 @@ public class XMLExportParserFactoryImpl implements ExportParserFactory {
 		}
 		return new MicrobiologyExportXMLParser(exportData);
 	}
-
 }

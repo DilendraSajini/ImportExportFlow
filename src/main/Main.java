@@ -14,10 +14,10 @@ public class Main {
 		// To Do: handle batch data
 		RequestData requestData = new RequestData(1);
 		PersistanceAPI persistanceAPI = new PersistanceAPIImpl();
-		new ExportInteractor(persistanceAPI, HandlerManagerImpl.getInstance()).export(requestData, DocType.JSON);
+		new ExportInteractor(persistanceAPI, HandlerManagerImpl.getInstance()).export(requestData, DocType.XML);
 
 		String stringXML = "<xml></xml>";
 		ReportData<String> data = new ReportData<>(1, stringXML);
-		new ImportInteractor<String>(persistanceAPI, HandlerManagerImpl.getInstance()).importData(data, DocType.JSON);
+		new ImportInteractor<String>(persistanceAPI, HandlerManagerImpl.getInstance()).importData(data, DocType.XML);
 	}
 }

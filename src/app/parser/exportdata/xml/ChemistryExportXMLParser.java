@@ -1,4 +1,6 @@
 package app.parser.exportdata.xml;
+import java.util.function.Function;
+
 import app.common.labdata.LabData;
 import app.parser.exportdata.ExportParser;
 
@@ -8,9 +10,8 @@ public class ChemistryExportXMLParser extends ExportParser{
 		super(exportData);
 	}
 
-	// contains parsing logic according to different speciality. usage of xsd generated files.
 	@Override
-	public String getString() {
-		return "Chemistry Request XML";
+	public <U> U processData(Function<String, U> supplier) {
+		return supplier.apply("Chemistry Request XML");
 	}
 }

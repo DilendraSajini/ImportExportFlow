@@ -1,8 +1,11 @@
 package app.exportdata.interactors;
 
+import java.util.function.Function;
+
 import app.common.data.RequestData;
 import app.common.labdata.HandlerManager;
 import app.common.labdata.handler.DataHandler;
+import app.common.persistable.PersistableData;
 import app.common.persistance.PersistanceAPI;
 import app.extension.exportdata.ExportLabDataExtension;
 import main.DocType;
@@ -20,7 +23,8 @@ public class ExportInteractor {
 
 	public void export(RequestData data, DocType type) {
 		DataHandler handler = handlerManager.getExportHandler(data);
-		String xmlString = ((ExportLabDataExtension) (handler.getData().getExtensionMap().get(type))).getString();
+		Function<String, PersistableData<String>> persistableDataSupplier = PersistableData<String>::new;
+		String xmlString = ((PersistableData<String>) ((ExportLabDataExtension) (handler.getData().getExtensionMap().get(type))).processData(persistableDataSupplier)).getFinalImportOutput();
 		persistanceApi.save(xmlString);
 		System.out.println(xmlString);
 	}

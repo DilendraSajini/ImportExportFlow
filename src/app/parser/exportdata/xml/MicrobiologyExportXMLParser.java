@@ -1,4 +1,7 @@
 package app.parser.exportdata.xml;
+
+import java.util.function.Function;
+
 import app.common.labdata.LabData;
 import app.parser.exportdata.ExportParser;
 
@@ -9,8 +12,7 @@ public class MicrobiologyExportXMLParser extends ExportParser {
 	}
 
 	@Override
-	public String getString() {
-		return "Microbiology Request XML";
+	public <U> U processData(Function<String, U> supplier) {
+		return supplier.apply("Microbiology Request XML");
 	}
-
 }

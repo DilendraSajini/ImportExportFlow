@@ -1,15 +1,17 @@
 package app.parser.importdata;
 
+import java.util.function.BiFunction;
+
+import app.common.data.ReportData;
 import app.importdata.labdata.ImportData;
-import app.importdata.persistable.PersistableData;
 
 public abstract class ImportParser<T> {
-	
-	protected ImportData<T> importData;
 
-	public abstract PersistableData<T> getObject();
+	protected ImportData<T> importData;
 
 	public ImportParser(ImportData<T> importData) {
 		this.importData = importData;
 	}
+
+	public abstract <U> U processData(BiFunction<String, ReportData<T>, U> supplier);
 }

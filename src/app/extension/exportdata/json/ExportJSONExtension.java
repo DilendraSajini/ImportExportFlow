@@ -1,5 +1,7 @@
 package app.extension.exportdata.json;
 
+import java.util.function.Function;
+
 import app.exportdata.labdata.ExportData;
 import app.extension.exportdata.ExportLabDataExtension;
 import app.parser.exportdata.ExportParser;
@@ -15,12 +17,13 @@ public class ExportJSONExtension extends ExportLabDataExtension {
 		super(exportData);
 		this.exportData = exportData;
 		ExportTypeParserFactory exportParserFactory = ExportTypeParserFactoryImpl.getInstance();
-		parser = exportParserFactory.getTypeParserFactory(DocType.JSON).getParser(this.exportData.getSpeciality(), exportData);
+		parser = exportParserFactory.getTypeParserFactory(DocType.JSON).getParser(this.exportData.getSpeciality(),
+				exportData);
 	}
 
 	@Override
-	public String getString() {
-		return parser.getString();
+	public <U> U processData(Function<String, U> supplier) {
+		return parser.processData(supplier);
 	}
 
 }
