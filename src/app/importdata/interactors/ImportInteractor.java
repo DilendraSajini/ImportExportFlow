@@ -20,10 +20,11 @@ public class ImportInteractor<T> {
 		this.handlerManager = handlerManager;
 	}
 
-	public void importData(ReportData<T> data, DocType type) {
+	public void importData(ReportData<T> data, DocType type,
+			BiFunction<String, T, PersistableData> persistableDataSupplier) {
 		DataHandler handler = handlerManager.getImportHandler(data);
-		BiFunction<String, ReportData<T>, PersistableData<T>> persistableDataSupplier = PersistableData<T>::new;
-		PersistableData<T> persistableData = (PersistableData<T>) ((ImportLabDataExtension) (handler.getData().getExtensionMap().get(type))).processData(persistableDataSupplier);
+		PersistableData persistableData = ((ImportLabDataExtension<T>) (handler.getData()
+				.getExtensionMap().get(type))).processData(persistableDataSupplier);
 		persistanceAPI.save(persistableData.getFinalImportOutput());
 		System.out.println(persistableData.getFinalImportOutput());
 	}

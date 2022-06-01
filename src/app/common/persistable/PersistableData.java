@@ -1,24 +1,24 @@
 package app.common.persistable;
 
-import app.common.data.ReportData;
+import main.XMLHolder;
 
-public class PersistableData<T> {
+public class PersistableData {
 
 	private String finalImportOutput;
 
 	public PersistableData(String outputMsg) {
 		this.finalImportOutput = outputMsg;
 	}
-			
-	public PersistableData(String outputMsg, T data) {
-		this.finalImportOutput = outputMsg + data;
-	}
 
 	public String getFinalImportOutput() {
 		return finalImportOutput;
 	}
-	
-	public PersistableData(String outputMsg, ReportData<T> reportData) {
-		this.finalImportOutput = outputMsg + reportData.getImportData();
+
+	public PersistableData(String outputMsg, String data) {
+		this.finalImportOutput = outputMsg + data;
+	}
+
+	public PersistableData(String outputMsg, XMLHolder data) {
+		this.finalImportOutput = outputMsg + data.getXml();
 	}
 }

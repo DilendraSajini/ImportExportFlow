@@ -23,8 +23,9 @@ public class ExportInteractor {
 
 	public void export(RequestData data, DocType type) {
 		DataHandler handler = handlerManager.getExportHandler(data);
-		Function<String, PersistableData<String>> persistableDataSupplier = PersistableData<String>::new;
-		String xmlString = ((PersistableData<String>) ((ExportLabDataExtension) (handler.getData().getExtensionMap().get(type))).processData(persistableDataSupplier)).getFinalImportOutput();
+		Function<String, PersistableData> persistableDataSupplier = PersistableData::new;
+		String xmlString = ((ExportLabDataExtension) (handler.getData().getExtensionMap().get(type)))
+				.processData(persistableDataSupplier).getFinalImportOutput();
 		persistanceApi.save(xmlString);
 		System.out.println(xmlString);
 	}
