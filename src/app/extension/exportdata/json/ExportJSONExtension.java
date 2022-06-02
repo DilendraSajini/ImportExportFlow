@@ -2,6 +2,7 @@ package app.extension.exportdata.json;
 
 import java.util.function.Function;
 
+import app.common.persistable.PersistableData;
 import app.exportdata.labdata.ExportData;
 import app.extension.exportdata.ExportLabDataExtension;
 import app.parser.exportdata.ExportParser;
@@ -22,7 +23,7 @@ public class ExportJSONExtension extends ExportLabDataExtension {
 	}
 
 	@Override
-	public <U> U processData(Function<String, U> supplier) {
+	public PersistableData processData(Function<String, PersistableData> supplier) {
 		return parser.processData(supplier);
 	}
 

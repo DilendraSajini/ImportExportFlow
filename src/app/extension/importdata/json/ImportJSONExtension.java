@@ -1,6 +1,8 @@
 package app.extension.importdata.json;
 
 import java.util.function.BiFunction;
+
+import app.common.persistable.PersistableData;
 import app.extension.importdata.ImportLabDataExtension;
 import app.importdata.labdata.ImportData;
 import app.parser.importdata.ImportParser;
@@ -19,7 +21,7 @@ public class ImportJSONExtension<T> extends ImportLabDataExtension<T> {
 	}
 
 	@Override
-	public <U> U processData(BiFunction<String, T, U> supplier) {
+	public PersistableData processData(BiFunction<String, T, PersistableData> supplier) {
 		return parser.processData(supplier);	
 	}
 

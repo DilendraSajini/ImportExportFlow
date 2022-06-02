@@ -3,6 +3,7 @@ package app.extension.importdata;
 import java.util.function.BiFunction;
 
 import app.common.extension.LabDataExtension;
+import app.common.persistable.PersistableData;
 import app.importdata.labdata.ImportData;
 
 public abstract class ImportLabDataExtension<T> implements LabDataExtension {
@@ -13,5 +14,5 @@ public abstract class ImportLabDataExtension<T> implements LabDataExtension {
 		this.importData = importData;
 	}
 
-	public abstract <U> U processData(BiFunction<String, T, U> supplier);
+	public abstract PersistableData processData(BiFunction<String, T, PersistableData> supplier);
 }
