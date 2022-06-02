@@ -14,7 +14,7 @@ public class ChemistryImportXMLParser<T> extends ImportParser<T> {
 	// generated files.
 	@Override
 	public <U> U processData(BiFunction<String, T, U> supplier) {
-		return supplier.apply("Chemistry XML Report Object", importData.getReportData().getImportData());
+		return processData("Chemistry XML Report Object", supplier);
 	}
 
 }

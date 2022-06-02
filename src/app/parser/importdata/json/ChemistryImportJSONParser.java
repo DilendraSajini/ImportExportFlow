@@ -13,6 +13,6 @@ public class ChemistryImportJSONParser<T> extends ImportParser<T> {
 
 	@Override
 	public <U> U processData(BiFunction<String, T, U> supplier) {
-		return supplier.apply("Chemistry JSON Report Object", importData.getReportData().getImportData());
+		return processData("Chemistry JSON Report Object", supplier);
 	}
 }

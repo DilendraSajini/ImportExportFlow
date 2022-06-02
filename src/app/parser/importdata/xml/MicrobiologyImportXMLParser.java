@@ -13,6 +13,6 @@ public class MicrobiologyImportXMLParser<T> extends ImportParser<T> {
 
 	@Override
 	public <U> U processData(BiFunction<String, T, U> supplier) {
-		return supplier.apply("Microbiology XML Report Object", importData.getReportData().getImportData());
+		return processData("Microbiology XML Report Object", supplier);
 	}
 }

@@ -13,4 +13,8 @@ public abstract class ImportParser<T> {
 	}
 
 	public abstract <U> U processData(BiFunction<String, T, U> supplier);
+	
+	protected <U> U processData(String outputMsg, BiFunction<String, T, U> supplier) {
+		return supplier.apply(outputMsg, importData.getReportData().getImportData());
+	}
 }
