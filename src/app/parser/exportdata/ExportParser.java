@@ -3,6 +3,7 @@ package app.parser.exportdata;
 import java.util.function.Function;
 
 import app.common.labdata.LabData;
+import app.common.persistable.PersistableData;
 
 public abstract class ExportParser {
 
@@ -13,5 +14,5 @@ public abstract class ExportParser {
 		this.exportData = exportData;
 	}
 
-	public abstract <U> U processData(Function<String, U> supplier);
+	public abstract PersistableData processData(Function<String, PersistableData> supplier);
 }

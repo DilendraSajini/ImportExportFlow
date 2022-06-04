@@ -2,4 +2,4 @@
 Generate XML String representation for Request Data Object and convert Report XML String to Report Data Object. 
 
 ## UML Diagram
-![Alt text](RequestExport_ReportImport.jpeg?raw=true)
+![Alt text](UseCase_RequestExportReportImport.jpeg?raw=true)
